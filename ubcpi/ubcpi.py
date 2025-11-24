@@ -365,6 +365,11 @@ class PeerInstructionXBlock(XBlock, MissingDataFetcherMixin, PublishEventMixin):
         """
         html = self.resource_string("static/html/ubcpi_edit.html")
         frag = Fragment(html)
+        frag.add_javascript_url("//ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.js")
+        frag.add_javascript_url("//ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-messages.js")
+        frag.add_javascript_url("//ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-sanitize.js")
+        frag.add_javascript_url("//ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-cookies.js")
+        frag.add_javascript_url("//cdnjs.cloudflare.com/ajax/libs/angular-gettext/2.3.8/angular-gettext.min.js")
         frag.add_javascript(self.resource_string("static/js/src/ubcpi_edit.js"))
 
         frag.initialize_js('PIEdit', {
